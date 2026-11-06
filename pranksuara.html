@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="audio"
+src="https://mp3tourl.com/audio/1793957930753-ad344629-1350-4b71-9dd4-26169f5f51e2.mp3"
+preload="auto"
+></audio>
+
+<script>
+const audio = document.getElementById("audio");
+
+window.addEventListener("load", () => {
+    audio.play().catch(() => {
+        document.addEventListener("click", () => {
+            audio.play();
+        }, { once: true });
+    });
+});
+</script>
+
+</body>
+</html>
